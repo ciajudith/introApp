@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AdditionController;
+use App\Http\Controllers\MultiplicationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,18 +15,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('app');
+    return view('layouts.app');
+});
+
+Route::get('/addition', [AdditionController::class,'index'])->name('addition');
+Route::post('/additionSimple', [AdditionController::class,'additionSimple'])->name('additionSimple');
+Route::get('/multiplication', [MultiplicationController::class,'index'])->name('multiplication');
+Route::post('/simpleMultiplication', [MultiplicationController::class,'simpleMultiplication'])->name('simpleMultiplication');
+
+Route::get('/racinecarree', function () {
+    return view('racinecarree');
 });
 
 
-Route::get('/page1', function () {
-    return view('pages.page1');
-});
+//Route::get('/multiplication', [AdditionController::class,'multiplication']);
+//Route::get('/racinecarree', [AdditionController::class,'racinecarree']);
 
-Route::get('/page2', function () {
-    return view('pages.page2');
-});
-
-Route::get('/page3', function () {
-    return view('pages.page3');
-});

@@ -1,6 +1,6 @@
-@extends('app')
+@extends('layouts.app')
 
 @section('content')
-<h1>Page 3</h1>
+<h1>Racine Carrée</h1>
 <p>This is the content of page 3.</p>
 @endsection
